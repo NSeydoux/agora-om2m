@@ -10,5 +10,8 @@ prefix map: <http://iot.linkeddata.es/def/wot-mappings#>
 
 select distinct * where {
   ?s wot:providesInteractionPattern ?pattern .
-  ?pattern map:observes ?observes .
+  ?pattern map:observes ?observes ;
+    core:hasValue ?val.
+  ?val core:literalValue ?litVal;
+    core:timeStamp ?ts.
 }

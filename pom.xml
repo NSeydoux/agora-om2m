@@ -1,27 +1,37 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.om2m.agora</groupId>
-  <artifactId>agom2m</artifactId>
-  <version>0.0.1</version>
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.om2m.agora</groupId>
+	<artifactId>agom2m</artifactId>
+	<version>0.0.1</version>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<jersey.version>2.23.1</jersey.version>
 		<om2m.libs.path>${project.basedir}/libs</om2m.libs.path>
 	</properties>
-  <dependencies>
-  	<dependency>
-      <groupId>vicinity.oeg.vicinity-open-gateway-api-distributed-query-client</groupId>
-      <artifactId>vicinity-open-gateway-api-distributed-query-client</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.jena</groupId>
-        <artifactId>apache-jena-libs</artifactId>
-        <version>3.6.0</version>
-        <type>pom</type>
-    </dependency>
-    <!-- OM2M -->
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.om2m</groupId>
+			<artifactId>org.eclipse.om2m.commons</artifactId>
+			<scope>system</scope>
+			<systemPath>${om2m.libs.path}/agora-client-1.0.jar</systemPath>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>vicinity.oeg.vicinity-open-gateway-api-distributed-query-client</groupId>
+			<artifactId>vicinity-open-gateway-api-distributed-query-client</artifactId>
+			<systemPath>${om2m.libs.path}/om2m-commons.jar</systemPath>
+			<scope>system</scope>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<version>3.6.0</version>
+			<type>pom</type>
+		</dependency>
+		<!-- OM2M -->
 		<dependency>
 			<groupId>org.eclipse.om2m</groupId>
 			<artifactId>org.eclipse.om2m.commons</artifactId>
@@ -75,5 +85,21 @@
 			<artifactId>sparql-lib</artifactId>
 			<version>1.0</version>
 		</dependency>
-  </dependencies>
+		<!-- LOGGING -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.8</version>
+		</dependency>
+	</dependencies>
 </project>

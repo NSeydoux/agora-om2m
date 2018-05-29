@@ -20,11 +20,11 @@ import org.apache.http.util.EntityUtils;
 public class HTTPClient {
 	private CloseableHttpClient httpclient;
 	
-	private static String authenticationHeader = "Basic b3BhLWVucmljaGVyOk9QQS1lbnJpY2htZW50LTRsaWZl";
+	private static String authenticationHeader = "admin:admin";
 	private static Map<String, String> defaultHeaders;
 	
 	private static final String prefixesURL = "http://localhost:80/prefixes";
-	private static final String discoveryURL = "http://localhost:80/discover?strict&mean";
+	private static final String discoveryURL = "http://localhost:80/discover";
 	
 	
 	static {
@@ -40,6 +40,16 @@ public class HTTPClient {
 		HttpGet httpGet = new HttpGet(url);
 		httpGet.addHeader("Accept", "application/json");
 //		httpGet.addHeader("Authorization", authenticationHeader);
+		CloseableHttpResponse response = httpclient.execute(httpGet);
+		HttpEntity entity = null;
+		entity = response.getEntity();
+	    return EntityUtils.toString(entity);
+	}
+	
+	public String authenticatedGet(String url) throws ClientProtocolException, IOException{
+		HttpGet httpGet = new HttpGet(url);
+		httpGet.addHeader("Accept", "application/json");
+		httpGet.addHeader("X-M2M-Origin", authenticationHeader);
 		CloseableHttpResponse response = httpclient.execute(httpGet);
 		HttpEntity entity = null;
 		entity = response.getEntity();

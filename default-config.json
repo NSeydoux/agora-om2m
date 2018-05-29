@@ -1,8 +1,8 @@
 {
 	"name":"test",
-	"instanceURL":"http://localhost:8080/~/",
-	"cseId":"in-cse/",
-	"cseName":"in-name/",
+	"instanceURL":"http://belge.laas.fr:8080/~/",
+	"cseId":"BBB_ADREAM_1/",
+	"cseName":"ETH_GW/",
 	"instanceIP":"127.0.0.1",
 	"notificationPort":9555
 }

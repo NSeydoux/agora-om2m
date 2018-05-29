@@ -1,0 +1,8 @@
+{
+	"name":"test",
+	"instanceURL":"http://localhost:8080/~/",
+	"cseId":"in-cse/",
+	"cseName":"in-name/",
+	"instanceIP":"127.0.0.1",
+	"notificationPort":9555
+}
